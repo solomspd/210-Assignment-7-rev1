@@ -15,6 +15,7 @@ private:
 		int vertex_1;
 		int vertex_2;
 		int weight;
+
 		bool operator < (const edge& rhs) const
 		{
 			return weight > rhs.weight;

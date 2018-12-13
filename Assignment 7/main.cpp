@@ -17,10 +17,12 @@ void main() {
 	if (in_file.is_open()) {
 		std::vector<std::string> vec_str_in;
 		std::string in_temp;
+		//input text file lines into vector
 		while (std::getline(in_file, in_temp)) {
 			vec_str_in.push_back(in_temp);
 		}
 		graph vill_map(vec_str_in.size());
+		//create string streams from each vector line and inputs into graph. it is made like so that you dont need to define the number of elements in the text file. the code figures it out itself
 		for (int i = 0; i < vec_str_in.size(); i++) {
 			std::istringstream temp_str_stream(vec_str_in[i]);
 			for (int j = 0; j < vec_str_in.size(); j++) {
@@ -30,6 +32,7 @@ void main() {
 			}
 		}
 		std::cout << std::endl << std::endl << "Adjacency matrix" << std::endl ;
+		//output top column of matrix for indentification
 		for (int i = 0; i < vill_map.get_size(); i++) {
 			std::cout << std::setw(5) << std::internal << char(i + char('A'));
 		}
@@ -44,7 +47,6 @@ void main() {
 		vill_map.dfs();
 		std::cout << std::endl << std::endl << "The edges of the Minimum Spanning Tree are: " << std::endl;
 		vill_map.minimum_span();
-		//vill_map.print_edges();
 	}
 	else {
 		std::cout << "error: cannot open file" << std::endl;

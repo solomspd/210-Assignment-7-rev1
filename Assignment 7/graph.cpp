@@ -22,7 +22,7 @@ void graph::insert_edge(int vertex_1_in, int vertex_2_in, int weight_in) {
 		new_edge.vertex_1 = vertex_1_in;
 		new_edge.vertex_2 = vertex_2_in;
 		new_edge.weight = weight_in;
-		//std::cout << new_edge;
+		//checks if there is a duplicate edge
 		for (int i = 0; i < edge_list.size(); i++){
 			if (new_edge == edge_list[i]) {
 				is_dupl = true;
@@ -40,7 +40,7 @@ void graph::insert_relation(int vertex_main_in, int vertex_append_in ,int weight
 
 void graph::print_adj() {
 	for (int i = 0; i < size; i++) {
-		std::cout << char(i + int('A'));
+		std::cout << char(i + int('A')); //outouts vertical column for identification
 		for (int j = 0; j < size; j++) {
 			std::cout << std::setw(5) << adjacent[i][j];
 		}
