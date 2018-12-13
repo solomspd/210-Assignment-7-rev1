@@ -1,0 +1,40 @@
+Results for sample graph in file "testgraph.txt"
+
+Adjacency Matrix
+
+   A  B  C  D  E  F  G
+  _____________________
+A |00 15 30 00 20 00 00
+B |15 00 00 40 00 00 00
+C |30 00 00 35 10 00 00
+D |00 40 35 00 00 11 00
+E |20 00 10 00 00 50 75
+F |00 00 00 11 50 00 16
+G |00 00 00 00 75 16 00
+
+Number of vertices = 7
+Number of non-zero edges = 10 
+
+These 10 edges are:
+A B 15
+A C 30
+A E 20
+B D 40
+C D 35
+C E 10
+D F 11
+E F 50
+E G 75
+F G 16
+
+DFS Graph Traversal starting from node A gives: A -> B -> D -> C -> E -> F -> G 
+
+The edges of the Minimum Spanning Tree are:
+C E 10
+D F 11
+A B 15
+F G 16
+A E 20
+C D 35
+
+The minimum total cost is 107
