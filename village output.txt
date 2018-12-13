@@ -1,0 +1,201 @@
+enter file name
+village
+
+
+Adjacency matrix
+    A    B    C    D    E    F    G    H    I    J    K    L    M    N    O    P    Q    R    S    T
+A    0    0    0    0   44   35   80   78    0   52    0   40    0    0   93   82   81   93   48    0
+B    0    0   43   61    0    0   57   36   53   82   92   84   44   72    0   48   44    0   55   83
+C    0   43    0   39   69    0    0   92   57   59   91    0    0    0   58    0   52   91   95   49
+D    0   61   39    0    0   74    0   57   81    0   89   41   56   93    0   78    0   73    0   44
+E   44    0   69    0    0   92    0   48    0   79   67   59    0   63   63    0   40   46   38   45
+F   35    0    0   74   92    0    0    0   70    0   44   70   60    0    0   82    0    0    0   36
+G   80   57    0    0    0    0    0   79   93   36    0   39    0   39   39   94    0    0    0    0
+H   78   36   92   57   48    0   79    0   86    0   91   89   54    0   40    0    0    0    0   97
+I    0   53   57   81    0   70   93   86    0   93    0    0    0   44    0    0   53    0   59   38
+J   52   82   59    0   79    0   36    0   93    0    0   92    0   74   83   39   65    0   67    0
+K    0   92   91   89   67   44    0   91    0    0    0    0   38   36   95   44   68    0   79   88
+L   40   84    0   41   59   70   39   89    0   92    0    0   66    0   68   89   77   74   48    0
+M    0   44    0   56    0   60    0   54    0    0   38   66    0    0    0   46   58   86    0   69
+N    0   72    0   93   63    0   39    0   44   74   36    0    0    0   55   57   37   67   84   64
+O   93    0   58    0   63    0   39   40    0   83   95   68    0   55    0    0   68   42   53    0
+P   82   48    0   78    0   82   94    0    0   39   44   89   46   57    0    0    0   63    0   80
+Q   81   44   52    0   40    0    0    0   53   65   68   77   58   37   68    0    0    0   45   43
+R   93    0   91   73   46    0    0    0    0    0    0   74   86   67   42   63    0    0   63    0
+S   48   55   95    0   38    0    0    0   59   67   79   48    0   84   53    0   45   63    0   43
+T    0   83   49   44   45   36    0   97   38    0   88    0   69   64    0   80   43    0   43    0
+
+
+
+number of non zero edges is 119
+
+number of vertecies is 20
+
+
+these 119 edges are
+A       E       44
+A       F       35
+A       G       80
+A       H       78
+A       J       52
+A       L       40
+A       O       93
+A       P       82
+A       Q       81
+A       R       93
+A       S       48
+B       C       43
+B       D       61
+B       G       57
+B       H       36
+B       I       53
+B       J       82
+B       K       92
+B       L       84
+B       M       44
+B       N       72
+B       P       48
+B       Q       44
+B       S       55
+B       T       83
+C       D       39
+C       E       69
+C       H       92
+C       I       57
+C       J       59
+C       K       91
+C       O       58
+C       Q       52
+C       R       91
+C       S       95
+C       T       49
+D       F       74
+D       H       57
+D       I       81
+D       K       89
+D       L       41
+D       M       56
+D       N       93
+D       P       78
+D       R       73
+D       T       44
+E       F       92
+E       H       48
+E       J       79
+E       K       67
+E       L       59
+E       N       63
+E       O       63
+E       Q       40
+E       R       46
+E       S       38
+E       T       45
+F       I       70
+F       K       44
+F       L       70
+F       M       60
+F       P       82
+F       T       36
+G       H       79
+G       I       93
+G       J       36
+G       L       39
+G       N       39
+G       O       39
+G       P       94
+H       I       86
+H       K       91
+H       L       89
+H       M       54
+H       O       40
+H       T       97
+I       J       93
+I       N       44
+I       Q       53
+I       S       59
+I       T       38
+J       L       92
+J       N       74
+J       O       83
+J       P       39
+J       Q       65
+J       S       67
+K       M       38
+K       N       36
+K       O       95
+K       P       44
+K       Q       68
+K       S       79
+K       T       88
+L       M       66
+L       O       68
+L       P       89
+L       Q       77
+L       R       74
+L       S       48
+M       P       46
+M       Q       58
+M       R       86
+M       T       69
+N       O       55
+N       P       57
+N       Q       37
+N       R       67
+N       S       84
+N       T       64
+O       Q       68
+O       R       42
+O       S       53
+P       R       63
+P       T       80
+Q       S       45
+Q       T       43
+R       S       63
+S       T       43
+
+
+DFS Graph Traversal starting from node A gives:
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+
+
+The edges of the Minimum Spanning Tree are:
+A       F       35
+B       H       36
+F       T       36
+G       J       36
+K       N       36
+N       Q       37
+E       S       38
+I       T       38
+K       M       38
+C       D       39
+J       P       39
+G       L       39
+G       N       39
+G       O       39
+A       L       40
+E       Q       40
+H       O       40
+D       L       41
+O       R       42
+
+total cost of spanning tree is 728

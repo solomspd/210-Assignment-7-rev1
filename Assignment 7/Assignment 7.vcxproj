@@ -124,6 +124,7 @@
     <ClInclude Include="..\..\..\..\..\..\Abdo%27s University work\Fall 2018\Data structures and algorithms\Assignments\Assignment 7\Assignment 7\graph.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="..\..\..\..\..\..\Abdo%27s University work\Fall 2018\Data structures and algorithms\Assignments\Assignment 7\Assignment 7\testgraph.txt" />
     <Text Include="..\..\..\..\..\..\Abdo%27s University work\Fall 2018\Data structures and algorithms\Assignments\Assignment 7\Assignment 7\village.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
