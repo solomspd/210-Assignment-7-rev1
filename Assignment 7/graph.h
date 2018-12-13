@@ -4,6 +4,7 @@
 #include <queue>
 #include <cmath>
 #include <iostream>
+#include <iomanip>
 
 #include "dis_set.h"
 
@@ -21,14 +22,14 @@ private:
 
 		friend std::ostream& operator << (std::ostream& os, const edge& rhs)
 		{
-			os << rhs.vertex_1 << "	" << rhs.vertex_2 << "	" << rhs.weight << std::endl;
+			os << char (rhs.vertex_1 + int('A')) << "	" << char(rhs.vertex_2 + int('A')) << "	" << rhs.weight << std::endl;
 			return os;
 		}
 	};
 	int vert_num, edges, order, size;
 	int * seen;
 	std::vector<edge> edge_list;
-	std::vector<std::vector<int>> adjacent;
+	int ** adjacent;
 	edge * mst;
 
 	dis_set span_set;
@@ -36,12 +37,16 @@ private:
 	void visit(int);
 
 public:
-	graph();
+	graph(int size_in = 25);
 	void insert(int, int, int weight = 1);
 	void insert_edge(int, int, int weight = 1);
-	void insert_relation(int, int);
+	void insert_relation(int, int, int weight= 1);
+	void print_adj();
 	void dfs();
 	void minimum_span();
+	int get_size();
+	int non_0_edge();
+	void print_edges();
 	~graph();
 };
 

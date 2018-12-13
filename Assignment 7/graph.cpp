@@ -1,30 +1,57 @@
 #include "graph.h"
 
-graph::graph()
+graph::graph(int size_in) : size(size_in)
 {
+	adjacent = new int*[size];
+	for (int i = 0; i < size; i++) {
+		adjacent[i] = new int[size];
+	}
 	vert_num = 0;
 	edges = 0;
-	size = -1;
 }
 
 void graph::insert(int vertex_1_in, int vertex_2_in, int weight_in) {
 	insert_edge(vertex_1_in, vertex_2_in, weight_in);
-	insert_relation(vertex_1_in, vertex_2_in);
+	insert_relation(vertex_1_in, vertex_2_in, weight_in);
 }
 
 void graph::insert_edge(int vertex_1_in, int vertex_2_in, int weight_in) {
-	edge new_edge;
-	new_edge.vertex_1 = vertex_1_in;
-	new_edge.vertex_2 = vertex_2_in;
-	new_edge.weight = weight_in;
-	edge_list.push_back(new_edge);
-	if (vertex_1_in > size) {
-		size = vertex_1_in;
+	if (weight_in > 0) {
+		edge new_edge;
+		new_edge.vertex_1 = vertex_1_in;
+		new_edge.vertex_2 = vertex_2_in;
+		new_edge.weight = weight_in;
+		//std::cout << new_edge;
+		edge_list.push_back(new_edge);
 	}
 }
 
-void graph::insert_relation(int vertex_main_in, int vertex_append_in) {
-	adjacent[vertex_main_in].push_back(vertex_append_in);
+void graph::insert_relation(int vertex_main_in, int vertex_append_in ,int weight_in) {
+	adjacent[vertex_main_in][vertex_append_in] = weight_in;
+}
+
+void graph::print_adj() {
+	for (int i = 0; i < size; i++) {
+		std::cout << char(i + int('A'));
+		for (int j = 0; j < size; j++) {
+			std::cout << std::setw(5) << adjacent[i][j];
+		}
+		std::cout << std::endl;
+	}
+}
+
+int graph::get_size() {
+	return size;
+}
+
+int graph::non_0_edge() {
+	return edge_list.size();
+}
+
+void graph::print_edges() {
+	for (int i = 0; i < edge_list.size(); i++) {
+		std::cout << edge_list[i];
+	}
 }
 
 void graph::minimum_span() {
@@ -51,7 +78,7 @@ void graph::minimum_span() {
 
 void graph::visit(int in) {
 	seen[in] = ++order;
-	std::cout << in << std::endl;
+	std::cout << char(in + int('A')) << std::endl;
 	for (int i = 0; i < size; i++) {
 		if (adjacent[in][i] > 0 && seen[in] == -1) {
 			visit(i);
